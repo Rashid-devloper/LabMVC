@@ -1,0 +1,11 @@
+﻿D:\dotnet-framework\PathLabMvc\
+│   PathLabMvc.sln
+│   .gitignore   👈 yaha banegi
+│
+├── Controllers\
+├── Models\
+├── Views\
+├── wwwroot\
+├── Properties\
+├── PathLabMvc\
+│   PathLabMvc.csproj
