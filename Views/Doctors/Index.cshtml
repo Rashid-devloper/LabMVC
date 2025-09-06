@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PathLabMvc.Models.Doctor>
+@{
+    ViewData["Title"] = "Doctors";
+}
+<h2>Doctors</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">+ New Doctor</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.Id</td>
+                <td>@d.Name</td>
+                <td>@d.Specialization</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@d.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@d.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@d.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
